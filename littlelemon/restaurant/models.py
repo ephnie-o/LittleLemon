@@ -6,7 +6,7 @@ class BookingTable(models.Model):
     no_of_guest = models.IntegerField()
     booking_date = models.DateTimeField()
 
-    def get_item(self):
+    def __str__(self):
         return f'{self.name} ; Number of guests: {str(self.no_of_guest)} ; Date: {str(self.booking_date)}'
 
 class MenuTable(models.Model):
@@ -14,5 +14,5 @@ class MenuTable(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.SmallIntegerField()
 
-    def get_item(self):
+    def __str__(self):
         return f'{self.title} : {str(self.price)}'
